@@ -1,16 +1,17 @@
-const express = require('express');
-const app = express();
+const express = require('express'); //aller chercher la fonction express 
+const app = express(); //instance
 
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.json()) //parcé en json
+app.use(express.urlencoded({extended: true})) //encoder url
 
+// obtenir à la racine (/) la réponse 'ok'
 app.get('/', (request, response) => {
     response.json({reponse : 'ok'})
 })
 
 app.post('/', (request, response) => {
     console.log(request.body)
-    response.json({reponse : 'ok2'})
+    response.status(500).json({reponse : 'ok2'})
 })
 
 app.listen(8080, () => 'application écoute sur le port 8080')
