@@ -38,7 +38,7 @@ app.put('/:name', (req, res) => {
 app.delete('/:name', (req, res) => {
     req.params.name
     bdd = bdd.filter(item => item.name !== req.params.name)
-    res.status(204).json({reponse : 'data remove'})
+    res.status(204).json({reponse : 'data is remove'})
 })
 
 app.listen(8080, () => 'application écoute sur le port 8080')
